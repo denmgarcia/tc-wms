@@ -16,7 +16,7 @@ export async function createUser(email: string, name: string) {
 
 export async function getUserByEmail(email: string) {
   
-  const data = await (await axios.get(`http://localhost/rest/user/${email}`)).data // change me to 3002
+  const data = await (await axios.get(`http://localhost:9999/rest/user/${email}`)).data // change me to 3002
   if(!data) {
     return null;
   }

@@ -16,6 +16,6 @@ spec:
     spec:
       containers:
       - name: tcwms-fe
-        image: cyborden/tcwms-fe:0.0.8
+        image: cyborden/tcwms-fe:0.0.13
         ports:
         - containerPort: 3000
