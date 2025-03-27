@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: tcwms-fe
+  labels:
+    app: tcwms-fe
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: tcwms-fe
+  template:
+    metadata:
+      labels:
+        app: tcwms-fe
+    spec:
+      containers:
+      - name: tcwms-fe
+        image: cyborden/tcwms-fe:0.0.13
+        ports:
+        - containerPort: 3000

@@ -118,7 +118,7 @@ export default function ReportPage() {
       data : base64.split(',')[1]
     };
     
-    const response = await axios.post(process.env.NEXT_PUBLIC_GEN_AI_API + "/api/ai", config)
+    const response = await axios.post("http://localhost/api/ai", config)
 
     
     try {
