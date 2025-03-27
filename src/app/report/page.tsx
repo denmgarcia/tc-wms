@@ -111,14 +111,14 @@ export default function ReportPage() {
     let config = {
       method: 'post',
       maxBodyLength: Infinity,
-      url: 'http://localhost/api/ai',
+      url: 'http://localhost:9999/api/ai',
       headers: { 
         'Content-Type': 'multipart/form-data'
       },
       data : base64.split(',')[1]
     };
     
-    const response = await axios.post("http://localhost/api/ai", config)
+    const response = await axios.post("http://localhost:9999/api/ai", config)
 
     
     try {
