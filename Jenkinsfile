@@ -14,7 +14,7 @@ pipeline {
         stage("Project Building") {
             steps {
                 git branch: 'main', url: 'https://github.com/denmgarcia/tc-wms'
-                sh 'npm install'
+                sh 'npm install --force'
             }
         }
         
