@@ -32,6 +32,7 @@ pipeline {
                     echo "TEST"
 
                 sh """
+                   git config --global --add safe.directory /home/ubuntu/tc-wms
                    cd ${REMOTE_PATH}
                    git pull origin main
                 """
