@@ -32,9 +32,7 @@ pipeline {
                     echo "TEST"
 
                 sh """
-                    mkdir -p ~/.ssh
-                    ssh-keyscan -H 192.168.100.67 >> ~/.ssh/known_hosts
-                    ssh ${REMOTE_SERVER} 'cd ${REMOTE_PATH} && git pull origin main'
+                   'cd ${REMOTE_PATH} && git pull origin main'
                 """
                }
             }
