@@ -32,7 +32,8 @@ pipeline {
                     echo "TEST"
 
                 sh """
-                   'cd ${REMOTE_PATH} && git pull origin main'
+                   cd ${REMOTE_PATH}
+                   git pull origin main
                 """
                }
             }
