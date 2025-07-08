@@ -29,6 +29,8 @@ pipeline {
         stage("Git pulling") {
             steps {
                script {
+                    mkdir -p ~/.ssh
+                    ssh-keyscan -H 192.168.100.67 >> ~/.ssh/known_hosts
                 sh """
                         ssh ${REMOTE_SERVER} 'cd ${REMOTE_PATH} && git pull origin main'
                     """
