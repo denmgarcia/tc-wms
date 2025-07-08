@@ -26,10 +26,10 @@ pipeline {
             }
         }
         
-        stage("Docker Push") {
+        stage("Git pulling") {
             steps {
                script {
-                   sh "echo TEST"
+                    sh 'git pull origin main'
                }
             }
         }
