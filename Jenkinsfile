@@ -30,11 +30,12 @@ pipeline {
             steps {
                script {
                     echo "TEST"
+
+                sh """
                     mkdir -p ~/.ssh
                     ssh-keyscan -H 192.168.100.67 >> ~/.ssh/known_hosts
-                sh """
-                        ssh ${REMOTE_SERVER} 'cd ${REMOTE_PATH} && git pull origin main'
-                    """
+                    ssh ${REMOTE_SERVER} 'cd ${REMOTE_PATH} && git pull origin main'
+                """
                }
             }
         }
