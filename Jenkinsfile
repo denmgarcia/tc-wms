@@ -5,10 +5,10 @@ pipeline {
     //     nodejs 'NodeJS'
     // }
     
-    // environment {
-    //     DOCKER_IMAGE = "cyborden/tc-wms"
-    //     BUILD_TAG = "v1.0.${BUILD_NUMBER}"
-    // }
+    environment {
+        REMOTE_SERVER = 'ubuntu@192.168.100.67'  // Change this to your server
+        REMOTE_PATH = '/home/ubuntu/tc-wms'   // Change this to your repository path
+    }
 
     stages {
         stage("Project Building") {
@@ -29,7 +29,9 @@ pipeline {
         stage("Git pulling") {
             steps {
                script {
-                    sh 'git pull origin main'
+                sh """
+                        ssh ${REMOTE_SERVER} 'cd ${REMOTE_PATH} && git pull origin main'
+                    """
                }
             }
         }
